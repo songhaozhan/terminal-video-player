@@ -14,9 +14,13 @@
 
 ## 🎥 Demo
 
-![Terminal Video Player Demo](video/result.gif)
+### Original Video vs Terminal Output Comparison
 
-*Example output showing high-resolution colored ASCII art video playback in terminal*
+| Original Video | Terminal ASCII Art Output |
+|----------------|---------------------------|
+| ![Original Video](video/sample.gif) | ![Terminal Video Player Demo](video/result.gif) |
+
+*Left: Original video input | Right: High-resolution colored ASCII art output in terminal*
 
 ## 🚀 Quick Start
 
