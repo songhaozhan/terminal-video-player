@@ -12,6 +12,12 @@
 - **Customizable Output**: Adjustable terminal dimensions and frame rate
 - **Real-time Processing**: Live frame extraction and conversion with minimal latency
 
+## 🎥 Demo
+
+![Terminal Video Player Demo](video/result.gif)
+
+*Example output showing high-resolution colored ASCII art video playback in terminal*
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -75,16 +81,16 @@ go run main.go <video_file> [width] [height] [fps]
 
 ```bash
 # Play video with default settings
-go run main.go video/demo.mp4
+go run main.go video/sample.mp4
 
 # Custom resolution for larger terminals
-go run main.go video/demo.mp4 160 40
+go run main.go video/sample.mp4 160 40
 
 # High frame rate playback
-go run main.go video/demo.mp4 100 30 30
+go run main.go video/sample.mp4 100 30 30
 
 # Widescreen format
-go run main.go video/demo.mp4 200 25 20
+go run main.go video/sample.mp4 200 25 20
 ```
 
 ## 🏗️ Architecture
