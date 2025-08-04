@@ -1,0 +1,49 @@
+# Compiled binaries
+video_player
+ai_tool2
+*.exe
+*.dll
+*.so
+*.dylib
+
+# IDE files
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+
+# Go specific
+*.test
+*.prof
+coverage.out
+go.sum
+
+# Video frame cache
+/tmp/video_frames/
+
+# Build artifacts
+dist/
+build/
+
+# Log files
+*.log
+
+# Environment files
+.env
+.env.local
