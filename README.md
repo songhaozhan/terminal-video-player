@@ -2,6 +2,8 @@
 
 🎬 A high-performance terminal video player that converts videos into ultra-high resolution colored ASCII art using advanced quadrant block rendering techniques.
 
+**English** | [中文](README_zh.md)
+
 ## ✨ Features
 
 - **Ultra-High Resolution ASCII Art**: Uses 2x2 pixel sampling with 16 Unicode quadrant block characters for maximum detail
