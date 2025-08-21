@@ -20,7 +20,7 @@
 
 | 原始视频 | 彩色模式 | 黑白模式 |
 |---------|---------|---------|
-| ![原始视频](video/sample.gif) | ![终端视频播放器演示](video/result.gif) | ![黑白模式演示](video/mono.gif) |
+| <img src="video/sample.gif" width="250"> | <img src="video/result.gif" width="250"> | <img src="video/mono.gif" width="250"> |
 
 *左：原始视频输入 | 中：彩色ASCII艺术输出 | 右：黑白ASCII艺术输出*
 

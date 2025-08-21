@@ -20,7 +20,7 @@
 
 | Original Video | Color Mode | Monochrome Mode |
 |----------------|------------|-----------------|
-| ![Original Video](video/sample.gif) | ![Terminal Video Player Demo](video/result.gif) | ![Monochrome Demo](video/mono.gif) |
+| <img src="video/sample.gif" width="250"> | <img src="video/result.gif" width="250"> | <img src="video/mono.gif" width="250"> |
 
 *Left: Original video input | Center: High-resolution colored ASCII art output | Right: Monochrome ASCII art output*
 
