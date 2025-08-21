@@ -18,11 +18,11 @@
 
 ### 原始视频与终端输出对比
 
-| 原始视频 | 终端ASCII艺术输出 |
-|---------|------------------|
-| ![原始视频](video/sample.gif) | ![终端视频播放器演示](video/result.gif) |
+| 原始视频 | 彩色模式 | 黑白模式 |
+|---------|---------|---------|
+| ![原始视频](video/sample.gif) | ![终端视频播放器演示](video/result.gif) | ![黑白模式演示](video/mono.gif) |
 
-*左：原始视频输入 | 右：终端中的高分辨率彩色ASCII艺术输出*
+*左：原始视频输入 | 中：彩色ASCII艺术输出 | 右：黑白ASCII艺术输出*
 
 ## 🚀 快速开始
 
@@ -73,7 +73,7 @@ go run main.go video/sample.mp4 120 30 24
 ## 📋 命令行选项
 
 ```
-go run main.go <视频文件> [宽度] [高度] [帧率]
+go run main.go <视频文件> [宽度] [高度] [帧率] [模式]
 ```
 
 | 参数 | 描述 | 默认值 |
@@ -82,6 +82,7 @@ go run main.go <视频文件> [宽度] [高度] [帧率]
 | `宽度` | 终端宽度（字符数） | 80 |
 | `高度` | 终端高度（字符数） | 24 |
 | `帧率` | 播放帧率 | 15.0 |
+| `模式` | 显示模式："color"(彩色)、"mono"/"black"/"bw"(黑白) | color |
 
 ### 使用示例
 
@@ -95,8 +96,11 @@ go run main.go video/sample.mp4 160 40
 # 高帧率播放
 go run main.go video/sample.mp4 100 30 30
 
-# 宽屏格式
-go run main.go video/sample.mp4 200 25 20
+# 宽屏格式（彩色模式）
+go run main.go video/sample.mp4 200 25 20 color
+
+# 黑白模式播放
+go run main.go video/sample.mp4 120 30 24 mono
 ```
 
 ## 🏗️ 架构设计

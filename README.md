@@ -18,11 +18,11 @@
 
 ### Original Video vs Terminal Output Comparison
 
-| Original Video | Terminal ASCII Art Output |
-|----------------|---------------------------|
-| ![Original Video](video/sample.gif) | ![Terminal Video Player Demo](video/result.gif) |
+| Original Video | Color Mode | Monochrome Mode |
+|----------------|------------|-----------------|
+| ![Original Video](video/sample.gif) | ![Terminal Video Player Demo](video/result.gif) | ![Monochrome Demo](video/mono.gif) |
 
-*Left: Original video input | Right: High-resolution colored ASCII art output in terminal*
+*Left: Original video input | Center: High-resolution colored ASCII art output | Right: Monochrome ASCII art output*
 
 ## 🚀 Quick Start
 
@@ -73,7 +73,7 @@ go run main.go video/sample.mp4 120 30 24
 ## 📋 Command Line Options
 
 ```
-go run main.go <video_file> [width] [height] [fps]
+go run main.go <video_file> [width] [height] [fps] [mode]
 ```
 
 | Parameter | Description | Default |
@@ -81,7 +81,8 @@ go run main.go <video_file> [width] [height] [fps]
 | `video_file` | Path to video file (required) | - |
 | `width` | Terminal width in characters | 80 |
 | `height` | Terminal height in characters | 24 |
-| `fps` | Playback frame rate | 15.0 |
+| `fps` | Playbook frame rate | 15.0 |
+| `mode` | Display mode: "color", "mono", "black", or "bw" | color |
 
 ### Examples
 
@@ -95,8 +96,11 @@ go run main.go video/sample.mp4 160 40
 # High frame rate playback
 go run main.go video/sample.mp4 100 30 30
 
-# Widescreen format
-go run main.go video/sample.mp4 200 25 20
+# Widescreen format with color mode
+go run main.go video/sample.mp4 200 25 20 color
+
+# Monochrome/black and white playback
+go run main.go video/sample.mp4 120 30 24 mono
 ```
 
 ## 🏗️ Architecture
