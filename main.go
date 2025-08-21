@@ -11,8 +11,9 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("用法: go run main.go <视频文件路径>")
-		fmt.Println("示例: go run main.go video/aaa.mp4")
+		fmt.Println("用法: go run main.go <视频文件路径> [宽度] [高度] [帧率] [模式]")
+		fmt.Println("示例: go run main.go video/aaa.mp4 120 30 24 color")
+		fmt.Println("模式: color(彩色) 或 mono(黑白)，默认为彩色")
 		return
 	}
 
@@ -53,10 +54,23 @@ func main() {
 		}
 	}
 
+	// Set color mode (default is color)
+	if len(os.Args) >= 6 {
+		mode := os.Args[5]
+		if mode == "mono" || mode == "black" || mode == "bw" {
+			videoPlayer.SetColorMode(false)
+		}
+	}
+
 	fmt.Printf("终端视频播放器\n")
 	fmt.Printf("视频文件: %s\n", videoPath)
 	fmt.Printf("输出尺寸: %dx%d\n", videoPlayer.Width, videoPlayer.Height)
 	fmt.Printf("播放帧率: %.1f FPS\n", videoPlayer.FPS)
+	if videoPlayer.ColorMode {
+		fmt.Printf("播放模式: 彩色\n")
+	} else {
+		fmt.Printf("播放模式: 黑白\n")
+	}
 	fmt.Println()
 
 	if err := videoPlayer.Play(); err != nil {

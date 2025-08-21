@@ -28,7 +28,7 @@ var quadrantChars = []string{
 }
 
 // ImageToASCII converts image to smooth colored block art
-func ImageToASCII(img image.Image, width, height int) string {
+func ImageToASCII(img image.Image, width, height int, colorMode bool) string {
 	bounds := img.Bounds()
 	imgWidth := bounds.Max.X
 	imgHeight := bounds.Max.Y
@@ -78,9 +78,15 @@ func ImageToASCII(img image.Image, width, height int) string {
 			// Map quadrant mask to Unicode block character
 			char := quadrantChars[quadrantMask]
 
-			// Output character with averaged color
+			// Output character with or without color
 			if char != " " {
-				result.WriteString(fmt.Sprintf("\033[38;2;%d;%d;%dm%s", avgR, avgG, avgB, char))
+				if colorMode {
+					// Color mode: use 24-bit RGB colors
+					result.WriteString(fmt.Sprintf("\033[38;2;%d;%d;%dm%s", avgR, avgG, avgB, char))
+				} else {
+					// Monochrome mode: use default terminal colors
+					result.WriteString(char)
+				}
 			} else {
 				result.WriteString(char)
 			}

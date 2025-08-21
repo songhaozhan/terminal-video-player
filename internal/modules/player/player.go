@@ -16,6 +16,7 @@ type VideoPlayer struct {
 	Width     int
 	Height    int
 	FPS       float64
+	ColorMode bool // true for color, false for monochrome
 }
 
 // New creates a new VideoPlayer with default settings
@@ -25,6 +26,7 @@ func New(videoPath string) *VideoPlayer {
 		Width:     80,   // Terminal width
 		Height:    24,   // Terminal height
 		FPS:       15.0, // Frames per second for ASCII playback
+		ColorMode: true, // Default to color mode
 	}
 }
 
@@ -37,6 +39,11 @@ func (vp *VideoPlayer) SetDimensions(width, height int) {
 // SetFPS sets custom playback frame rate
 func (vp *VideoPlayer) SetFPS(fps float64) {
 	vp.FPS = fps
+}
+
+// SetColorMode sets color mode (true for color, false for monochrome)
+func (vp *VideoPlayer) SetColorMode(colorMode bool) {
+	vp.ColorMode = colorMode
 }
 
 // Play starts video playback in terminal with optimized smooth display
@@ -71,7 +78,7 @@ func (vp *VideoPlayer) Play() error {
 		}
 
 		// Convert to ASCII
-		asciiFrame := converter.ImageToASCII(img, vp.Width, vp.Height)
+		asciiFrame := converter.ImageToASCII(img, vp.Width, vp.Height, vp.ColorMode)
 		loadTime := time.Since(start)
 
 		// Build complete output in one go

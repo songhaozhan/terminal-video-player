@@ -191,6 +191,11 @@ Thanks to ffmpeg integration, the player supports a wide range of video formats:
 4. **Terminal**: Use hardware-accelerated terminals for best performance
 5. **SSD Storage**: Faster storage improves frame loading times
 
+## ⚠️ Important Notes
+
+- **Terminal Window Size**: If you experience flickering during playback, try enlarging your terminal window. A larger terminal window provides better rendering stability and reduces visual artifacts.
+- **Terminal Compatibility**: For best results, use modern terminal emulators that support 24-bit color (iTerm2, Windows Terminal, modern GNOME Terminal, etc.)
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
